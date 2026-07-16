@@ -1,4 +1,4 @@
-# Taxfix AI Tax Assistant — Case Study Prototype
+# Taxfix AI Tax Assistant - Case Study Prototype
 
 A working AI assistant for solo self-employed Taxfix users, built around a
 curated, risk-tagged knowledge base and a four-tier trust system
