@@ -122,6 +122,3 @@ taxfix-assistant/
 ├── EVAL_RESULTS.md             # 15 tested questions, tagged into the error grid
 └── CASE_STUDY_DECK.md          # Full written case study
 ```
----
- 
-Built in a short, focused sprint as a case study submission. Full write-up in [`CASE_STUDY_DECK.md`](./CASE_STUDY_DECK.md).
