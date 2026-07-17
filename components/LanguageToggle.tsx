@@ -36,7 +36,7 @@ export default function LanguageToggle() {
           </button>
         ))}
       </div>
-      <Tooltip label="Language toggle" align="left">
+      <Tooltip label="Language toggle" align="right">
         Concept only in this demo. The production version would translate responses and rule text into German.
       </Tooltip>
     </div>
