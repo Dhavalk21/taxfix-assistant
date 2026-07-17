@@ -4,12 +4,33 @@ import { useState } from "react";
 
 export default function Tooltip({
   label,
+  align = "center",
   children,
 }: {
   label: string;
+  align?: "center" | "left" | "right";
   children: React.ReactNode;
 }) {
   const [open, setOpen] = useState(false);
+
+  // "center" balances over the icon, default for most in-flow tooltips.
+  // "right" anchors the tooltip's left edge to the icon so it opens
+  // rightward, used near the left screen edge to avoid clipping.
+  // "left" anchors the tooltip's right edge to the icon so it opens
+  // leftward, used near the right screen edge.
+  const positionStyle: React.CSSProperties =
+    align === "right"
+      ? { bottom: "calc(100% + 8px)", left: 0, transform: "none" }
+      : align === "left"
+      ? { bottom: "calc(100% + 8px)", right: 0, left: "auto", transform: "none" }
+      : { bottom: "calc(100% + 8px)", left: "50%", transform: "translateX(-50%)" };
+
+  const arrowStyle: React.CSSProperties =
+    align === "right"
+      ? { left: 10, transform: "none" }
+      : align === "left"
+      ? { right: 10, left: "auto", transform: "none" }
+      : { left: "50%", transform: "translateX(-50%)" };
 
   return (
     <span
@@ -46,9 +67,7 @@ export default function Tooltip({
           role="tooltip"
           style={{
             position: "absolute",
-            bottom: "calc(100% + 8px)",
-            left: "50%",
-            transform: "translateX(-50%)",
+            ...positionStyle,
             background: "var(--ink)",
             color: "#fff",
             fontSize: 12.5,
@@ -66,8 +85,7 @@ export default function Tooltip({
             style={{
               position: "absolute",
               top: "100%",
-              left: "50%",
-              transform: "translateX(-50%)",
+              ...arrowStyle,
               width: 0,
               height: 0,
               borderLeft: "6px solid transparent",

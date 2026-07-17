@@ -9,7 +9,7 @@ const TIER_CONFIG: Record<
     color: "var(--tier-direct)",
     bg: "var(--tier-direct-bg)",
     explainer:
-      "This is a fixed rule that doesn't depend on your personal numbers — safe to answer plainly.",
+      "This is a fixed rule that doesn't depend on your personal numbers, safe to answer plainly.",
   },
   hedge: {
     label: "Answer with caveat",
@@ -18,24 +18,43 @@ const TIER_CONFIG: Record<
     explainer:
       "There's a real answer here, but it comes with a condition or documentation requirement you need to know.",
   },
-  escalate: {
-    label: "Needs an expert",
+  escalate_needs_numbers: {
+    label: "Needs your numbers",
     color: "var(--tier-escalate)",
     bg: "var(--tier-escalate-bg)",
     explainer:
-      "This depends on your specific numbers or situation. A general answer here could be wrong for you — better to route to a real tax expert.",
+      "There's a rule for this, but the right answer depends on your specific revenue or situation. A Taxfix expert can apply it to you.",
+  },
+  escalate_out_of_scope: {
+    label: "Outside what I know",
+    color: "var(--tier-escalate)",
+    bg: "var(--tier-escalate-bg)",
+    explainer:
+      "This isn't covered by my rules yet, so I won't guess. A Taxfix expert can help directly.",
   },
   refuse: {
     label: "Can't help with this",
     color: "var(--tier-refuse)",
     bg: "var(--tier-refuse-bg)",
     explainer:
-      "This request falls outside what a tax assistant should help with (e.g. hiding income or misrepresenting an expense).",
+      "This request falls outside what a tax assistant should help with, for example hiding income or misrepresenting an expense.",
   },
 };
 
-export default function TierBadge({ tier }: { tier: string }) {
-  const config = TIER_CONFIG[tier] ?? TIER_CONFIG.escalate;
+export default function TierBadge({
+  tier,
+  escalateReason,
+}: {
+  tier: string;
+  escalateReason?: string | null;
+}) {
+  const key =
+    tier === "escalate"
+      ? escalateReason === "out_of_scope"
+        ? "escalate_out_of_scope"
+        : "escalate_needs_numbers"
+      : tier;
+  const config = TIER_CONFIG[key] ?? TIER_CONFIG.escalate_needs_numbers;
   return (
     <span
       style={{
