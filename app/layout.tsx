@@ -1,3 +1,4 @@
+import Script from "next/script";
 import "./globals.css";
 
 export const metadata = {
@@ -23,6 +24,18 @@ export default function RootLayout({
           href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
           rel="stylesheet"
         />
+        <Script
+  async
+  src="https://plausible.io/js/pa-XSwOZG_uvP6r4Ss0e_Khe.js"
+  strategy="afterInteractive"
+/>
+<Script
+  id="plausible-init"
+  strategy="afterInteractive"
+  dangerouslySetInnerHTML={{
+    __html: `window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};plausible.init()`,
+  }}
+/>
       </head>
       <body>{children}</body>
     </html>
