@@ -283,6 +283,21 @@ export default function Home() {
             justifyContent: "space-between",
           }}
         >
+        <div
+          style={{
+            background: "var(--tier-hedge-bg)",
+            border: "1px solid var(--tier-hedge)",
+            borderRadius: 8,
+            padding: "10px 12px",
+            fontSize: 11.5,
+            color: "var(--tier-hedge)",
+            lineHeight: 1.5,
+            marginBottom: 24,
+          }}
+        >
+          Note: the demo runs on a paid, credit-limited key. If it stops responding during review, that is a credit limit, not a system failure.
+        </div>
+          
           <span>Designed and built by Dhaval Kareliya</span>
           <a
             href="https://github.com/Dhavalk21"
