@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useRef, useEffect } from "react";
+import Link from "next/link";
 import TierBadge from "@/components/TierBadge";
 import Tooltip from "@/components/Tooltip";
 import ActionRow from "@/components/ActionRow";
@@ -129,7 +130,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div style={{ display: "flex", gap: 8, marginBottom: 24, flexWrap: "wrap" }}>
+        <div style={{ display: "flex", gap: 8, marginBottom: 12, flexWrap: "wrap" }}>
           <button
             onClick={() => setShowGuide(true)}
             style={{
@@ -163,6 +164,24 @@ export default function Home() {
             Under the hood
           </button>
         </div>
+        <Link
+          href="/architecture"
+          style={{
+            display: "block",
+            textAlign: "center",
+            fontSize: 12.5,
+            fontWeight: 600,
+            padding: "9px 10px",
+            borderRadius: 8,
+            border: "1px solid var(--tier-hedge)",
+            background: "var(--tier-hedge-bg)",
+            color: "var(--tier-hedge)",
+            textDecoration: "none",
+            marginBottom: 24,
+          }}
+        >
+          System design →
+        </Link>
 
         <div
           style={{
