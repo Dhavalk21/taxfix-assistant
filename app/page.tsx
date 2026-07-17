@@ -270,20 +270,7 @@ export default function Home() {
         </div>
 
         <div style={{ flex: 1 }} />
-
-        <div
-          style={{
-            fontSize: 11.5,
-            color: "var(--ink-soft)",
-            paddingTop: 16,
-            marginTop: 16,
-            borderTop: "1px solid var(--border)",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "space-between",
-          }}
-        >
-        <div
+<div
           style={{
             background: "var(--tier-hedge-bg)",
             border: "1px solid var(--tier-hedge)",
@@ -297,7 +284,18 @@ export default function Home() {
         >
           Note: the demo runs on a paid, credit-limited key. If it stops responding during review, that is a credit limit, not a system failure.
         </div>
-          
+        <div
+          style={{
+            fontSize: 11.5,
+            color: "var(--ink-soft)",
+            paddingTop: 16,
+            marginTop: 16,
+            borderTop: "1px solid var(--border)",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "space-between",
+          }}
+        >    
           <span>Designed and built by Dhaval Kareliya</span>
           <a
             href="https://github.com/Dhavalk21"
