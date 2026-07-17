@@ -276,14 +276,14 @@ export default function Home() {
             border: "1px solid var(--tier-hedge)",
             borderRadius: 8,
             padding: "10px 12px",
-            fontSize: 12,
+            fontSize: 12.5,
             fontWeight: "bold",
             color: "var(--tier-hedge)",
             lineHeight: 1.5,
             marginBottom: 24,
           }}
         >
-          Note: the demo runs on a paid, credit-limited key. Asking up to 200 questions is fine. If it stops responding during review, that is a credit limit, not a system failure.
+        Note: The demo uses a limited paid key (max 200 questions). <br /> If it stops responding, it is out of credits, not a system failure.
         </div>
         <div
           style={{
